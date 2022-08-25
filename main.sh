@@ -11,6 +11,6 @@ case $ans in
   2 ) echo Compiling Client...; sh gradlew teavmc; echo Compiled classes.js; exit;;
   4 ) echo Compiling Client...; sh gradlew teavmc; echo Compiled classes.js; echo Compiling EPK...; java -jar epkcompiler/CompilePackage.jar "resources" "output/assets.epk"; echo Compiled EPK; echo Starting Server for Testing...; python -m http.server --directory output; exit;;
   3 ) echo Starting Server for Testing...; python -m http.server --directory output; exit;;
-  5 ) git init; git add -A; read -p "Commit Message:" mess; git commit -m $mess; git remote set-url origin https://TheRealUnBot:$KEY_GIT@github.com/TheRealUnBot/MinecraftOfVPS.git; git push -u -f origin main; exit;;
+  5 ) git init; git config --global user.name "TheRealUnBot"; git config --global user.email "161210@student.vansd.org"; git add -A; read -p "Commit Message:" mess; git commit -m $mess; git remote set-url origin https://TheRealUnBot:$KEY_GIT@github.com/TheRealUnBot/MinecraftOfVPS.git; git push -u -f origin main; exit;;
   6 ) rm -r *; git clone https://github.com/TheRealUnBot/MinecraftOfVPS.git; exit;;
 esac
