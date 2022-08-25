@@ -1,6 +1,6 @@
 echo Welcome to DevForMOV! What would you like to do?;
 echo 1: Compile Texture Pack;
-echo 2: Compile Client Javascript;
+echo 2: Compile Client;
 echo 3: Start Server for Testing;
 echo 4: Compile Both and Start Server;
 echo 5: Push All Changes to Github;
