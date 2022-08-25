@@ -1,5 +1,7 @@
 { pkgs }: {
     deps = [
+        pkgs.webfs
+        pkgs.python39Packages.pip
         pkgs.nano
         pkgs.zip
         pkgs.bashInteractive
