@@ -15,6 +15,7 @@ gui.no=No
 menu.singleplayer=Singleplayer
 menu.multiplayer=Multiplayer
 menu.online=Minecraft Realms
+menu.events=Events! (beta)
 menu.options=Options...
 menu.editprofile=Edit Profile
 menu.voicechannel=Voice Channel
