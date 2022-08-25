@@ -1,5 +1,6 @@
 { pkgs }: {
     deps = [
+        pkgs.nano
         pkgs.zip
         pkgs.bashInteractive
         pkgs.busybox
