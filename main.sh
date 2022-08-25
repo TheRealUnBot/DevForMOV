@@ -10,5 +10,5 @@ case $ans in
   2 ) echo Compiling Client...; sh gradlew teavmc; echo Compiled classes.js; exit;;
   4 ) echo Compiling Client...; sh gradlew teavmc; echo Compiled classes.js; echo Compiling EPK...; java -jar epkcompiler/CompilePackage.jar "resources" "output/assets.epk"; echo Compiled EPK; echo Starting Server for Testing...; python -m http.server --directory output; exit;;
   3 ) echo Starting Server for Testing...; python -m http.server --directory output; exit;;
-  5 ) git config --global user.email "161210@student.vansd.org"; git config --global user.name "TheRealUnBot"; git init; git add .; git commit -m 'test'; git remote set-url origin https://github.com/TheRealUnBot/DevForMOV.git; git push -u origin master; exit;;
+  5 ) git init; git add .; git commit -m 'test'; git remote set-url origin https://github.com/TheRealUnBot/DevForMOV.git; git push -u origin master; exit;;
 esac
