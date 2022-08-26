@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Minecraft Of VPS</title>
-    <link rel="shortcut icon" href="favicon.ico"/>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" src="classes.js"></script>
-    <script type="text/javascript">
-      window.addEventListener("load", function(){
-        window.minecraftOpts = [
-        "game_frame","assets.epk",
-        btoa(atob("CgAACQAHc2VydmVycwoAAAABCAAKZm9yY2VkTU9URABtb3RkaGVyZQEAC2hpZGVBZGRyZXNzAQgAAmlwAGlwaGVyZQgABG5hbWUAbmFtZWhlcmUAAA==").replace("motdhere",String.fromCharCode(`Minecraft of VPS`.length)+`Minecraft of VPS`).replace("namehere",String.fromCharCode(`Minecraft of VPS`.length)+`Minecraft of VPS`).replace("iphere",String.fromCharCode(("ws"+location.protocol.slice(4)+"//mainserver.skyviewmc.repl.co").length)+("ws"+location.protocol.slice(4)+"//mainserver2.skyviewmc.repl.co")))
-        ];
-        (function(){
-          var q = window.location.search;
-          if(typeof q === 'string' && q.startsWith("?")) {
-          	q = new URLSearchParams(q);
-          	var s = q.get("server");
-          	if(s) window.minecraftOpts.push(s);
-          }
-        })();
-        main();
-      });
-    </script>
-  </head>
-  <body style="margin:0px;width:100vw;height:100vh;" id="game_frame">
-  </body>
+<head>
+<title>Minecraft Of VPS</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Change this: <meta property="og:url" content="https://gnome.vercel.app/" /> -->
+<script type="text/javascript" src="classes.js"></script>
+<script type="text/javascript">
+if(document.location.href.startsWith("file:")) {
+console.log("You're not supposed to 'open' this file in your browser. Please upload this folder to your HTTP(s) server and access it via the internet. This is not a bug, please read the documentation");
+}else {
+window.addEventListener("load", function(){
+window.minecraftOpts = [
+"game_frame","assets.epk",
+btoa(atob("CgAACQAHc2VydmVycwoAAAABCAAKZm9yY2VkTU9URABtb3RkaGVyZQEAC2hpZGVBZGRyZXNzAQgAAmlwAGlwaGVyZQgABG5hbWUAbmFtZWhlcmUAAA==").replace("motdhere",String.fromCharCode(`Minecraft Of VPS`.length)+`Minecraft Of VPS`).replace("namehere",String.fromCharCode(`Minecraft Of VPS`.length)+`Minecraft Of VPS`).replace("iphere",String.fromCharCode(("ws"+location.protocol.slice(4)+"//MainServer.skyviewmc.repl.co").length)+("ws"+location.protocol.slice(4)+"//MainServer.skyviewmc.repl.co")))
+];
+(function(){
+var q = window.location.search;
+if(typeof q === 'string' && q.startsWith("?")) {
+	q = new URLSearchParams(q);
+	var s = q.get("server");
+	if(s) window.minecraftOpts.push(s);
+}
+})();
+main();
+});}
+</script>
+</head>
+<body style="margin:0px;width:100vw;height:100vh;" id="game_frame">
+</body>
 </html>

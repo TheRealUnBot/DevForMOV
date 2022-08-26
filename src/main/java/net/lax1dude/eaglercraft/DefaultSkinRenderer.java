@@ -41,23 +41,6 @@ public class DefaultSkinRenderer {
 			new TextureLocation("/skins/16.scottish_alex.png"),
 			new TextureLocation("/skins/17.dev_steve.png"),
 			new TextureLocation("/skins/18.dev_alex.png"),
-			new TextureLocation("/skins/19.herobrine.png"),
-			new TextureLocation("/mob/enderman.png"),
-			new TextureLocation("/mob/skeleton.png"),
-			new TextureLocation("/mob/fire.png"),
-			new TextureLocation("/skins/20.barney.png"),
-			new TextureLocation("/skins/21.slime.png"),
-			new TextureLocation("/skins/22.noob.png"),
-			new TextureLocation("/skins/23.trump.png"),
-			new TextureLocation("/skins/24.notch.png"),
-			new TextureLocation("/skins/25.creeper.png"),
-			new TextureLocation("/skins/26.zombie.png"),
-			new TextureLocation("/skins/27.pig.png"),
-			new TextureLocation("/skins/28.squid.png"),
-			new TextureLocation("/skins/29.mooshroom.png"),
-			new TextureLocation("/mob/villager/villager.png"),
-			new TextureLocation("/skins/30.longarms.png"),
-			new TextureLocation("/skins/31.laxdude.png")
 	};
 	
 	public static final boolean[] defaultVanillaSkinClassicOrSlimVariants = new boolean[] {
