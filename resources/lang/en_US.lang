@@ -12,6 +12,7 @@ gui.down=Down
 gui.yes=Yes
 gui.no=No
 
+menu.creatorsite=Creator's Site
 menu.singleplayer=Singleplayer
 menu.multiplayer=Multiplayer
 menu.online=Minecraft Realms

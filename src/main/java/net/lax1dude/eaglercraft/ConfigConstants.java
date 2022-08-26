@@ -7,7 +7,7 @@ public class ConfigConstants {
 	public static final String version = "22w20b";
 	public static final String mainMenuString = "eaglercraft " + version;
 	
-	public static final String forkMe = "https://github.com/LAX1DUDE/eaglercraft";
+	public static final String creatorsite = "https://main.realunbot.repl.co/";
 
 	public static final boolean html5build = true;
 	

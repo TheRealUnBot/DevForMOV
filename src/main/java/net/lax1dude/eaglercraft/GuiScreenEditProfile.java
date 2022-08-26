@@ -49,7 +49,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 			"Enderman",
 			"Skeleton",
 			"Blaze",
-			"Barney",
+			"Barney (Dino)",
 			"Slime",
 			"Noob",
 			"Trump",

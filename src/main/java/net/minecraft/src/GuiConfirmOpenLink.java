@@ -5,7 +5,7 @@ public class GuiConfirmOpenLink extends GuiYesNo {
 	private String openLinkWarning;
 
 	/** Label for the Copy to Clipboard button. */
-	private String copyLinkButtonText;
+	private String copyLinkButtonText; 
 	private String field_92028_p;
 	private boolean field_92027_q = true;
 

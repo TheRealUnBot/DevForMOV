@@ -73,7 +73,7 @@ public class GuiMainMenu extends GuiScreen {
 		 * RunnableTitleScreen(this), "1.6 Update Check Thread")).start(); }
 		 */
 
-		this.field_92025_p = EaglerAdapter._wisWebGL() ? ("REBLOCKED Minecraft For VPS") : ("eaglercraft desktop runtime");
+		this.field_92025_p = EaglerAdapter._wisWebGL() ? ("REBLOCKED Minecraft For VPS") : ("REBLOCKED Minecraft For VPS Desktop Runtime");
 		this.start = System.currentTimeMillis() + System.currentTimeMillis() % 10000l;
 		this.ackLines = new ArrayList();
 		
@@ -137,8 +137,8 @@ public class GuiMainMenu extends GuiScreen {
 
 		//GuiButton single;
 		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, var4, var2.translateKey("menu.multiplayer")));
-		//this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, var2.translateKey("menu.events")));
-		//this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 2, var2.translateKey("menu.forkme")));
+		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, var2.translateKey("menu.events")));
+		this.buttonList.add(new GuiButton(6, this.width / 2 - 100, var4 + 24 * 2, var2.translateKey("menu.creatorsite")));
 		//single.enabled = false;
 
 		this.buttonList.add(new GuiButton(0, this.width / 2 - 100, var4 + 72 + 12, 98, 20, var2.translateKey("menu.options")));
@@ -268,10 +268,11 @@ public class GuiMainMenu extends GuiScreen {
 		}
 
 		if (par1GuiButton.id == 3) {
-			//this.mc.displayGuiScreen(new GuiScreenVoiceChannel(this));
-			EaglerAdapter.openLink(ConfigConstants.forkMe);
+			this.mc.displayGuiScreen(new GuiMultiplayer(this));
 		}
-
+    if (par1GuiButton.id == 6) {
+			EaglerAdapter.openLink(ConfigConstants.creatorsite);
+		}
 		if (par1GuiButton.id == 4) {
 			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
 		}
