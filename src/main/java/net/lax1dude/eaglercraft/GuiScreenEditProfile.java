@@ -44,22 +44,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 			"Scottish Steve",
 			"Scottish Alex",
 			"Developer Steve",
-			"Developer Alex",
-			"Herobrine",
-			"Enderman",
-			"Skeleton",
-			"Blaze",
-			"Barney (Dino)",
-			"Slime",
-			"Noob",
-			"Trump",
-			"Notch",
-			"Creeper",
-			"Zombie",
-			"Pig",
-			"Squid",
-			"Mooshroom",
-			"Villager"
+			"Developer Alex"
 	};
 	
 	protected String screenTitle = "Edit Profile";

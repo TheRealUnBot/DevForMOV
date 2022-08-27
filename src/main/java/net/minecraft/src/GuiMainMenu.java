@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
+import net.lax1dude.eaglercraft.GuiScreenLicense;
 import net.lax1dude.eaglercraft.ConfigConstants;
 import net.lax1dude.eaglercraft.EaglerAdapter;
 import net.lax1dude.eaglercraft.EaglercraftRandom;
@@ -268,7 +268,7 @@ public class GuiMainMenu extends GuiScreen {
 		}
 
 		if (par1GuiButton.id == 3) {
-			this.mc.displayGuiScreen(new GuiMultiplayer(this));
+			this.mc.displayGuiScreen(new GuiScreenLicense(this));
 		}
     if (par1GuiButton.id == 6) {
 			EaglerAdapter.openLink(ConfigConstants.creatorsite);

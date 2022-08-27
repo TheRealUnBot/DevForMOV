@@ -56,7 +56,7 @@ public class GuiScreenLicense extends GuiScreen {
 		EaglerAdapter.glPushMatrix();
 		EaglerAdapter.glScalef(0.75f, 0.75f, 0.75f);
 		drawCenteredString(fontRenderer, new String(License.line30), width * 4 / 6, (beginOffset + 89) * 4 / 3, 0x666666);
-		drawCenteredString(fontRenderer, new String(License.line31), width * 4 / 6, (beginOffset + 97) * 4 / 3, 0x999999);
+		drawCenteredString(fontRenderer, new String(License.line31), width * 4 / 6, (beginOffset + 97) * 4 / 3, 0x666666);
 		drawCenteredString(fontRenderer, new String(License.line32), width * 4 / 6, (beginOffset + 105) * 4 / 3, 0x999999);
 		EaglerAdapter.glPopMatrix();
 		
