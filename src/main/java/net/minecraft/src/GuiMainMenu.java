@@ -137,7 +137,7 @@ public class GuiMainMenu extends GuiScreen {
 
 		//GuiButton single;
 		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, var4, var2.translateKey("menu.multiplayer")));
-		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, var2.translateKey("menu.events")));
+		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, var2.translateKey("menu.whitelist")));
 		this.buttonList.add(new GuiButton(6, this.width / 2 - 100, var4 + 24 * 2, var2.translateKey("menu.creatorsite")));
 		//single.enabled = false;
 
@@ -268,7 +268,7 @@ public class GuiMainMenu extends GuiScreen {
 		}
 
 		if (par1GuiButton.id == 3) {
-			this.mc.displayGuiScreen(new GuiScreenLicense(this));
+			EaglerAdapter.openLink(ConfigConstants.whitesite);
 		}
     if (par1GuiButton.id == 6) {
 			EaglerAdapter.openLink(ConfigConstants.creatorsite);
