@@ -739,7 +739,7 @@ public class EaglerAdapterImpl2 {
 	public static final void initializeContext() {
 		daCanvas = new Canvas();
 		eagler = new Frame();
-		eagler.setTitle("eaglercraft desktop runtime");
+		eagler.setTitle("REBLOCKED");
 		eagler.setBackground(Color.BLACK);
 		JPanel var16 = new JPanel();
 		eagler.setLayout(new BorderLayout());
@@ -800,7 +800,7 @@ public class EaglerAdapterImpl2 {
 			}
 		}
 
-		Display.setTitle("eaglercraft desktop runtime");
+		Display.setTitle("REBLOCKED");
 		System.out.println("LWJGL Version: " + Sys.getVersion());
 		
 		_wGL_ANY_SAMPLES_PASSED = ARBOcclusionQuery2.GL_ANY_SAMPLES_PASSED;
@@ -1176,6 +1176,15 @@ public class EaglerAdapterImpl2 {
 			var5.printStackTrace();
 		}
 	}
+  public static final void openMail(String url) {
+		try {
+			Class var3 = Class.forName("java.awt.Desktop");
+			Object var4 = var3.getMethod("getDesktop", new Class[0]).invoke((Object) null, new Object[0]);
+			var3.getMethod("mail", new Class[] { URI.class }).invoke(var4, new Object[] { new URI(url) });
+		} catch (Throwable var5) {
+			var5.printStackTrace();
+		}
+	}
 	private static volatile boolean fileChooserOpen = false;
 	private static volatile byte[] fileChooserFile = null;
 	private static volatile String fileChooserName = null;
@@ -1536,7 +1545,7 @@ public class EaglerAdapterImpl2 {
 		public void onOpen(ServerHandshake arg0) {
 			send("Accept: " + type);
 		}
-
+ 
 		@Override
 		public boolean isQueryOpen() {
 			return open;

@@ -1796,6 +1796,9 @@ public class EaglerAdapterImpl2 {
 	public static final void openLink(String url) {
 		win.open(url, "_blank");
 	}
+  public static final void openMail() {
+		win.open("https://dot.com","_blank");
+	}
 	public static final void redirectTo(String url) {
 		Window.current().getLocation().setFullURL(url);
 	}

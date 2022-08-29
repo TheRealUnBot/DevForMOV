@@ -272,7 +272,7 @@ public class Minecraft implements Runnable {
 	
 	public void showWarningText() {
 		ScaledResolution var1 = new ScaledResolution(this.gameSettings, this.displayWidth, this.displayHeight);
-		String s = "Warning: Recompiled Minecraft! Problems may arise!!";
+		String s = "Warning: Recompiled Minecraft!";
 		this.fontRenderer.drawString(s, (var1.getScaledWidth() - this.fontRenderer.getStringWidth(s)) / 2, var1.getScaledHeight() - 50, 0xffcccccc);
 	}
 	
