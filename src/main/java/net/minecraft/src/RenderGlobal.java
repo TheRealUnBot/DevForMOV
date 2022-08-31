@@ -1574,7 +1574,6 @@ public class RenderGlobal implements IWorldAccess {
 	 */
 	public void playRecord(String par1Str, int par2, int par3, int par4) {
 		Minecraft.getMinecraft().displayEaglercraftText("records have been deleted to reduce file size");
-		
 		ItemRecord var5 = ItemRecord.getRecord(par1Str);
 
 		if (par1Str != null && var5 != null) {
