@@ -21,7 +21,7 @@ public class GameSettings {
 	public float soundVolume = 1.0F;
 	public float mouseSensitivity = 0.5F;
 	public boolean invertMouse = false;
-	public int renderDistance = 1;
+	public int renderDistance = 2;
 	public boolean viewBobbing = true;
 	public boolean anaglyph = false;
 
@@ -29,7 +29,7 @@ public class GameSettings {
 	public boolean advancedOpengl = false;
 	public int limitFramerate = 1;
 	public boolean fancyGraphics = false;
-	public boolean enableFog = true;
+	public boolean enableFog = false;
 
 	/** Smooth Lighting */
 	public int ambientOcclusion = 0;
@@ -143,7 +143,7 @@ public class GameSettings {
 		this.fovSetting = 0.0F;
 		this.gammaSetting = 1.0F;
 		this.guiScale = 3;
-		this.particleSetting = 0;
+		this.particleSetting = 2;
 		this.language = "en_US";
 		this.mc = par1Minecraft;
 		this.patchAnisotropic = EaglerAdapter.isWindows();
