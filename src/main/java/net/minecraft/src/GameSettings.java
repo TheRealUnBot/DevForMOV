@@ -27,7 +27,7 @@ public class GameSettings {
 
 	/** Advanced OpenGL */
 	public boolean advancedOpengl = false;
-	public int limitFramerate = 1;
+	public int limitFramerate = 0;
 	public boolean fancyGraphics = false;
 	public boolean enableFog = false;
 
