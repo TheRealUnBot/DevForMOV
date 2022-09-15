@@ -295,9 +295,9 @@ options.fog=Fog
 options.farWarning1=A 64 bit Java installation is recommended
 options.farWarning2=for 'Far' render distance (you have 32 bit)
 options.particles=Particles
-options.particles.all=All
-options.particles.decreased=Decreased
-options.particles.minimal=Minimal
+options.particles.all=Slow
+options.particles.decreased=Medium
+options.particles.minimal=Fast
 options.multiplayer.title=Multiplayer Settings...
 options.chat.title=Chat Settings...
 options.chat.visibility=Chat
@@ -328,11 +328,11 @@ options.framebufferAntialias.auto=Auto
 options.framebufferAntialias.fxaa=FXAA
 options.framebufferAntialias.msaa4=MSAA4
 options.framebufferAntialias.msaa8=MSAA8
-options.patchAnisotropic=Fix ANGLE bug #4994
+options.patchAnisotropic=Fix Mouse Bug
 
-performance.max=I am Speed!
-performance.balanced=Part of a healthy diet
-performance.powersaver=Lazy Bones
+performance.max=Fast
+performance.balanced=Medium
+performance.powersaver=Slow
 
 controls.title=Controls
 

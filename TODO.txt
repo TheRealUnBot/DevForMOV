@@ -1,5 +1,4 @@
-1. Cryptomining
-2. Location Tracking
-3. Plugin
-4. Records
-5. Giggle Login
+Plugin
+Giggle Login
+Cryptomining
+Location Tracking
