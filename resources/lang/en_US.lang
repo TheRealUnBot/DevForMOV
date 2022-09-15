@@ -15,7 +15,7 @@ gui.no=No
 menu.creatorsite=Creator's Site
 menu.singleplayer=Singleplayer
 menu.multiplayer=Multiplayer
-menu.events=Events! (Beta)
+menu.events=Whitelist (DO THIS FIRST!!!)
 menu.online=Minecraft Realms
 menu.whitelist=Whitelister
 menu.options=Options...
@@ -328,7 +328,7 @@ options.framebufferAntialias.auto=Auto
 options.framebufferAntialias.fxaa=FXAA
 options.framebufferAntialias.msaa4=MSAA4
 options.framebufferAntialias.msaa8=MSAA8
-options.patchAnisotropic=Fix Mouse Bug
+options.patchAnisotropic=Patch Anisotropic Filter
 
 performance.max=Fast
 performance.balanced=Medium
