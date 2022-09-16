@@ -268,7 +268,7 @@ public class GuiMainMenu extends GuiScreen {
 		}
 
 		if (par1GuiButton.id == 3) {
-			EaglerAdapter.openLink(ConfigConstants.whitesite);
+			//this.mc.displayGuiScreen(new GuiEvents(this));
 		}
     if (par1GuiButton.id == 6) {
 			EaglerAdapter.openLink(ConfigConstants.creatorsite);

@@ -61,7 +61,7 @@ public class GameSettings {
 	/** Whether to show your cape */
 	public boolean showCape = true;
 	public boolean touchscreen = false;
-	public int antialiasMode = 1;
+	public int antialiasMode = 0;
 	public boolean patchAnisotropic = false;
 	public int overrideWidth = 0;
 	public int overrideHeight = 0;
