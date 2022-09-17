@@ -5,6 +5,7 @@ echo 3: Start Server for Testing;
 echo 4: Compile Both and Start Server;
 echo 5: Push All Changes to Github;
 echo 6: Pull All Changes from Github;
+echo 7: Compile Both, Push All Changes to Github, and Start Server;
 read -p "Answer:" ans;
 case $ans in
   1 ) echo Compiling EPK...; java -jar epkcompiler/CompilePackage.jar "resources" "output/assets.epk"; echo Compiled EPK; exit;;
@@ -13,4 +14,5 @@ case $ans in
   3 ) echo Starting Server for Testing...; cd output; python -m http.server; exit;;
   5 ) git init; git add -A; git commit -m 'test'; git remote set-url origin https://TheRealUnBot:$KEY_GIT@github.com/TheRealUnBot/DevForMOV.git; git push -u origin master; exit;;
   6 ) git pull; exit;;
+  7 ) echo Compiling Client...; sh gradlew teavmc; echo Compiled classes.js; echo Compiling EPK...; java -jar epkcompiler/CompilePackage.jar "resources" "output/assets.epk"; echo Compiled EPK; echo Starting Server for Testing...; git init; git add -A; git commit -m 'test'; git remote set-url origin https://TheRealUnBot:$KEY_GIT@github.com/TheRealUnBot/DevForMOV.git; git push -u origin master; cd output; python -m http.server; exit;;
 esac
