@@ -5,7 +5,7 @@ echo 3: Start Server for Testing;
 echo 4: Compile Both and Start Server;
 echo 5: Push All Changes to Github;
 echo 6: Pull All Changes from Github;
-echo 7: Compile Both, Push All Changes to Github, and Start Server;
+echo 7: Compile Both, Push All Changes to Github, and Start Server "(Do #4 First)";
 read -p "Answer:" ans;
 case $ans in
   1 ) echo Compiling EPK...; java -jar epkcompiler/CompilePackage.jar "resources" "output/assets.epk"; echo Compiled EPK; exit;;
