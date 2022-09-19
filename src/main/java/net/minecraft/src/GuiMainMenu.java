@@ -137,7 +137,8 @@ public class GuiMainMenu extends GuiScreen {
 
 		//GuiButton single;
 		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, var4, var2.translateKey("menu.multiplayer")));
-		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, var2.translateKey("menu.events")));
+		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, 98, 20, var2.translateKey("menu.events")));
+        this.buttonList.add(new GuiButton(1, this.width / 2 + 2, var4 + 24 * 1, 98, 20, var2.translateKey("menu.whitelist")));
 		this.buttonList.add(new GuiButton(6, this.width / 2 - 100, var4 + 24 * 2, var2.translateKey("menu.creatorsite")));
 		//single.enabled = false;
 
@@ -161,9 +162,9 @@ public class GuiMainMenu extends GuiScreen {
 			int width = 315;
 			String file = EaglerAdapter.fileContents("/credits.txt");
 			if(file == null) {
-				for(int i = 0; i < 30; ++i) {
+				//for(int i = 0; i < 30; ++i) {
 					this.ackLines.add(" -- file not found -- ");
-				}
+				//}
 			}else {
 				String[] lines = file.split("\n");
 				for(String s : lines) {
@@ -258,13 +259,16 @@ public class GuiMainMenu extends GuiScreen {
 		if (par1GuiButton.id == 0) {
 			this.mc.displayGuiScreen(new GuiOptions(this, this.mc.gameSettings));
 		}
-
+        if (par1GuiButton.id == 1) {
+			EaglerAdapter.openLink(ConfigConstants.whitesite);
+		}
 		if (par1GuiButton.id == 5) {
 			this.mc.displayGuiScreen(new GuiLanguage(this, this.mc.gameSettings));
 		}
 
 		if (par1GuiButton.id == 2) {
-			this.mc.displayGuiScreen(new GuiMultiplayer(this));
+			//this.mc.displayGuiScreen(new GuiMultiplayer(this));
+            this.mc.displayGuiScreen(new GuiConnecting(new GuiMainMenu(), this.mc,new ServerData("Minecraft Of VPS","wss://MainServer2.skyviewmc.repl.co",true)));
 		}
 
 		if (par1GuiButton.id == 3) {
@@ -479,18 +483,6 @@ public class GuiMainMenu extends GuiScreen {
 			// this.field_92024_r) / 2, ((GuiButton)this.buttonList.get(0)).yPosition - 12,
 			// 16777215);
 		}
-		var10 = "Eaglercraft Credits";
-		int w = this.fontRenderer.getStringWidth(var10) * 3 / 4;
-		if(!showAck && par1 >= (this.width - w - 4) && par1 <= this.width && par2 >= 0 && par2 <= 9) {
-			drawRect((this.width - w - 4), 0, this.width, 9, 0x55000099);
-		}else {
-			drawRect((this.width - w - 4), 0, this.width, 9, 0x55200000);
-		}
-		EaglerAdapter.glPushMatrix();
-		EaglerAdapter.glTranslatef((this.width - w - 2), 1.0f, 0.0f);
-		EaglerAdapter.glScalef(0.75f, 0.75f, 0.75f);
-		this.drawString(this.fontRenderer, var10, 0, 0, 16777215);
-		EaglerAdapter.glPopMatrix();
 		
 		if(ConfigConstants.mainMenuItem > 0 && ConfigConstants.mainMenuItemLink != null) {
 			//drawRect((this.width - w - 4), 0, this.width, 9, 0x55200000);

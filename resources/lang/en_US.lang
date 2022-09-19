@@ -14,8 +14,8 @@ gui.no=No
 
 menu.creatorsite=Creator's Site
 menu.singleplayer=Singleplayer
-menu.multiplayer=Multiplayer
-menu.events=Events (UnFinished)
+menu.multiplayer=Join the Server
+menu.events=Events
 menu.online=Minecraft Realms
 menu.whitelist=Whitelister
 menu.options=Options...

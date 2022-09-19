@@ -480,12 +480,12 @@ public class NetClientHandler extends NetHandler {
 		this.mc.loadWorld((WorldClient) null);
 		if(par1Packet255KickDisconnect.reason.equalsIgnoreCase("BLOCKED")) {
 			EaglerAdapter.logRateLimit(netManager.getServerURI(), RateLimit.BLOCKED);
-			this.mc.displayGuiScreen(new GuiDisconnected(new GuiMultiplayer(new GuiMainMenu()), "disconnect.ratelimit.kickBlocked", "disconnect.endOfStream", (Object[])null));
+			this.mc.displayGuiScreen(new GuiDisconnected(new GuiMainMenu(), "disconnect.ratelimit.kickBlocked", "disconnect.endOfStream", (Object[])null));
 		}else if(par1Packet255KickDisconnect.reason.equalsIgnoreCase("LOCKED")) {
 			EaglerAdapter.logRateLimit(netManager.getServerURI(), RateLimit.LOCKED);
-			this.mc.displayGuiScreen(new GuiDisconnected(new GuiMultiplayer(new GuiMainMenu()), "disconnect.ratelimit.kickLocked", "disconnect.endOfStream", (Object[])null));
+			this.mc.displayGuiScreen(new GuiDisconnected(new GuiMainMenu(), "disconnect.ratelimit.kickLocked", "disconnect.endOfStream", (Object[])null));
 		}else {
-			this.mc.displayGuiScreen(new GuiDisconnected(new GuiMultiplayer(new GuiMainMenu()), "disconnect.disconnected", "disconnect.genericReason", new Object[] { par1Packet255KickDisconnect.reason }));
+			this.mc.displayGuiScreen(new GuiDisconnected(new GuiMainMenu(), "disconnect.disconnected", "disconnect.genericReason", new Object[] { par1Packet255KickDisconnect.reason }));
 		}
 	}
 
