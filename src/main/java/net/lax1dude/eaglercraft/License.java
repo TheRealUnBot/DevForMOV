@@ -23,7 +23,7 @@ public class License {
 	};
 	
 	static final byte[] line20 = new byte[] {
-		(byte)0,(byte)84,(byte)104,(byte)105,(byte)115,(byte)32,(byte)118,(byte)101,(byte)114,(byte)115,(byte)105,(byte)111,(byte)110,(byte)105,(byte)115,(byte)32,(byte)97,(byte)105,(byte)109,(byte)101,(byte)100,(byte)32,(byte)116,(byte)111,(byte)119,(byte)97,(byte)114,(byte)100,(byte)32,(byte)86,(byte)97,(byte)110,(byte)99,(byte)111,(byte)117,(byte)118,(byte)101,(byte)114,(byte)32,(byte)80,(byte)117,(byte)98,(byte)108,(byte)105,(byte)99,(byte)32,(byte)83,(byte)99,(byte)104,(byte)111,(byte)111,(byte)108,(byte)115,(byte)44,(byte)32,(byte)99,(byte)97,(byte)108,(byte)108,(byte)101,(byte)100,(byte)32,(byte)77,(byte)105,(byte)110,(byte)101,(byte)99,(byte)114,(byte)97,(byte)102,(byte)116,(byte)32,(byte)79,(byte)102,(byte)32,(byte)86,(byte)80,(byte)83,(byte)44
+		(byte)84,(byte)104,(byte)105,(byte)115,(byte)32,(byte)118,(byte)101,(byte)114,(byte)115,(byte)105,(byte)111,(byte)110,(byte)32,(byte)105,(byte)115,(byte)32,(byte)97,(byte)105,(byte)109,(byte)101,(byte)100,(byte)32,(byte)116,(byte)111,(byte)119,(byte)97,(byte)114,(byte)100,(byte)32,(byte)86,(byte)97,(byte)110,(byte)99,(byte)111,(byte)117,(byte)118,(byte)101,(byte)114,(byte)32,(byte)80,(byte)117,(byte)98,(byte)108,(byte)105,(byte)99,(byte)32,(byte)83,(byte)99,(byte)104,(byte)111,(byte)111,(byte)108,(byte)115,(byte)44,(byte)32,(byte)99,(byte)97,(byte)108,(byte)108,(byte)101,(byte)100,(byte)32,(byte)77,(byte)105,(byte)110,(byte)101,(byte)99,(byte)114,(byte)97,(byte)102,(byte)116,(byte)32,(byte)79,(byte)102,(byte)32,(byte)86,(byte)80,(byte)83,(byte)44
 	};
 
 	static final byte[] line21 = new byte[] {

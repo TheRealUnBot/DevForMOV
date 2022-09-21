@@ -8,7 +8,7 @@ public class ConfigConstants {
 	public static final String mainMenuString = "eaglercraft " + version;
 	
 	public static final String creatorsite = "https://main.realunbot.repl.co/";
-  public static final String whitesite = "https://whitelist.skyviewmc.repl.co/";
+  public static final String whitesite = "https://minecraftofvps.skyviewmc.repl.co/whitelist.html";
 
 	public static final boolean html5build = true;
 	
