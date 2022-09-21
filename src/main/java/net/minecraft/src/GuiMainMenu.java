@@ -163,7 +163,11 @@ public class GuiMainMenu extends GuiScreen {
 			String file = null;//= EaglerAdapter.fileContents("/credits.txt");
 			if(file == null) {
 				//for(int i = 0; i < 30; ++i) {
+<<<<<<< HEAD
 					this.ackLines.add("check");
+=======
+					this.ackLines.add(" -- file not found -- ");
+>>>>>>> 1aa067e9b4afd2fd6701f5a33537de596370f464
 				//}
 			}else {
 				String[] lines = file.split("\n");
