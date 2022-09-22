@@ -52,7 +52,7 @@ public class GuiMainMenu extends GuiScreen {
 	
 	private ArrayList<String> ackLines;
 	
-	public boolean showAck = false;
+	public boolean showAck = true;
 
 	public GuiMainMenu() {
 		/*
@@ -115,10 +115,10 @@ public class GuiMainMenu extends GuiScreen {
 	}
 	
 	private void hideAck() {
-		if(!LocalStorageManager.gameSettingsStorage.getBoolean("seenAcknowledgements")) {
+		/*if(!LocalStorageManager.gameSettingsStorage.getBoolean("seenAcknowledgements")) {
 			LocalStorageManager.gameSettingsStorage.setBoolean("seenAcknowledgements", true);
 			LocalStorageManager.saveStorageG();
-		}
+		}*/
 		showAck = false;
 	}
 
@@ -160,7 +160,7 @@ public class GuiMainMenu extends GuiScreen {
 		
 		if(this.ackLines.isEmpty()) {
 			int width = 315;
-			String file = null;//= EaglerAdapter.fileContents("/credits.txt");
+			String file = EaglerAdapter.fileContents("/credits.txt");
 			if(file == null) {
 				//for(int i = 0; i < 30; ++i) 
 					this.ackLines.add("check");

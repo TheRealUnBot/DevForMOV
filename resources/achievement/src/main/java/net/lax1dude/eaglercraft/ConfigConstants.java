@@ -4,11 +4,11 @@ public class ConfigConstants {
 	
 	public static boolean profanity = false;
 
-	public static final String version = "22w20b";
-	public static final String mainMenuString = "eaglercraft " + version;
+	public static final String version = "22w38a";
+	public static final String mainMenuString = "MinecraftOfVPS " + version;
 	
 	public static final String creatorsite = "https://main.realunbot.repl.co/";
-  public static final String whitesite = "https://whitelist.skyviewmc.repl.co/";
+  public static final String whitesite = "https://MinecraftOfVPS.skyviewmc.repl.co/whitelist.html";
 
 	public static final boolean html5build = true;
 	
