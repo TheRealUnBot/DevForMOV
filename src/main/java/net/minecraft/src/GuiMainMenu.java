@@ -137,10 +137,10 @@ public class GuiMainMenu extends GuiScreen{
 		int var4 = this.height / 4 + 48;
 
 		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, var4, var2.translateKey("menu.multiplayer")));
-		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, 98, 20, var2.translateKey("menu.events")));
+		this.buttonList.add(new GuiButton(7, this.width / 2 - 100, var4 + 24 * 1, 98, 20, var2.translateKey("menu.events")));
     this.buttonList.add(new GuiButton(1, this.width / 2 + 2, var4 + 24 * 1, 98, 20, var2.translateKey("menu.whitelist")));
 		this.buttonList.add(new GuiButton(6, this.width / 2 - 100, var4 + 24 * 2, 98, 20, var2.translateKey("menu.creatorsite")));
-    this.buttonList.add(new GuiButton(7, this.width / 2 + 2, var4 + 24 * 2, 98, 20, "Code of Conduct"));
+    this.buttonList.add(new GuiButton(3, this.width / 2 + 2, var4 + 24 * 2, 98, 20, "Code of Conduct"));
 
 		this.buttonList.add(new GuiButton(0, this.width / 2 - 100, var4 + 72 + 12, 98, 20, var2.translateKey("menu.options")));
 		this.buttonList.add(new GuiButton(4, this.width / 2 + 2, var4 + 72 + 12, 98, 20, var2.translateKey("menu.editprofile")));
@@ -263,11 +263,11 @@ public class GuiMainMenu extends GuiScreen{
     if (par1GuiButton.id == 6) {
 			EaglerAdapter.openLink(ConfigConstants.creatorsite);
 		}
+    if (par1GuiButton.id == 3) {
+			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/coc.html");
+		}
 		if (par1GuiButton.id == 4) {
 			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
-		}
-    if (par1GuiButton.id == 7) {
-			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/coc.html");
 		}
 	}
 
