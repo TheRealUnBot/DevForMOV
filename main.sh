@@ -11,6 +11,6 @@ case $ans in
   2 ) echo Compiling Client...; sh gradlew teavmc; echo Compiled classes.js; exit;;
   4 ) echo Compiling Client...; sh gradlew teavmc; echo Compiled classes.js; echo Compiling EPK...; java -jar epkcompiler/CompilePackage.jar "resources" "output/assets.epk"; echo Compiled EPK; echo Starting Server for Testing...; cd output; python -m http.server; exit;;
   3 ) echo Starting Server for Testing...; cd output; python -m http.server; exit;;
-  5 ) echo No updates, for now.#git init; git add -A; git commit -m 'test'; git remote set-url origin https://TheRealUnBot:$KEY_GIT@github.com/TheRealUnBot/DevForMOV.git; git push -u origin master; exit;;
+  5 ) git init; git add -A; git commit -m 'test'; git remote set-url origin https://TheRealUnBot:$KEY_GIT@github.com/TheRealUnBot/DevForMOV.git; git push -u origin master; exit;;
   6 ) git pull; exit;;
 esac
