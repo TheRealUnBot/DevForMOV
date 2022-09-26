@@ -1614,6 +1614,7 @@ public class EaglerAdapterImpl2 {
 	public static final void syncDisplay(int performanceToFps) {
 		
 	}
+  
 	
 	private static final DateFormat dateFormatSS = new SimpleDateFormat("yyyy-MM-dd_HH.mm.ss");
 	public static final void saveScreenshot() {
@@ -1795,9 +1796,6 @@ public class EaglerAdapterImpl2 {
 	}
 	public static final void openLink(String url) {
 		win.open(url, "_blank");
-	}
-  public static final void openMail() {
-		win.open("https://dot.com","_blank");
 	}
 	public static final void redirectTo(String url) {
 		Window.current().getLocation().setFullURL(url);

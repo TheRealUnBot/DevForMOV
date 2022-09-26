@@ -419,8 +419,8 @@ public class GuiIngame extends Gui {
 				offset = 0;
 			}
 			
-			this.drawString(var8, "Player is not using an xbox live account", 2, 64, 0xFFBBBB);
-			this.drawString(var8, "Using cracked server @ " + mc.getServerURI(), 2, 73, 0xFFBBBB);
+			//this.drawString(var8, "Player is not using an xbox live account", 2, 64, 0xFFBBBB);
+			//this.drawString(var8, "Using cracked server @ " + mc.getServerURI(), 2, 73, 0xFFBBBB);
 			var47 = MathHelper.floor_double(this.mc.thePlayer.posX);
 			var22 = MathHelper.floor_double(this.mc.thePlayer.posY);
 			var23 = MathHelper.floor_double(this.mc.thePlayer.posZ);
@@ -466,10 +466,10 @@ public class GuiIngame extends Gui {
 			
 			int offset = this.mc.isChatOpen() ? 135 : 0;
 			int offset2 = this.mc.isChatOpen() ? 4 : 0;
-			String str = "not using an xbox live account";
-			var8.drawStringWithShadow(str, (var6 * 4 / 3) - 2 - var8.getStringWidth(str) - offset, 2 + offset2, 0xFFDDDD);
-			str = "eaglercraft: " + ConfigConstants.version;
-			var8.drawStringWithShadow(str, (var6 * 4 / 3) - 2 - var8.getStringWidth(str) - offset, 12 + offset2, 14737632);
+			//String str = "not using an xbox live account";
+			//var8.drawStringWithShadow(str, (var6 * 4 / 3) - 2 - var8.getStringWidth(str) - offset, 2 + offset2, 0xFFDDDD);
+			//str = "eaglercraft: " + ConfigConstants.version;
+			//var8.drawStringWithShadow(str, (var6 * 4 / 3) - 2 - var8.getStringWidth(str) - offset, 12 + offset2, 14737632);
 			EaglerAdapter.glPopMatrix();
 		}
 

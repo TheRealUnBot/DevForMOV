@@ -11,8 +11,22 @@ import net.lax1dude.eaglercraft.GuiScreenEditProfile;
 import net.lax1dude.eaglercraft.LocalStorageManager;
 import net.lax1dude.eaglercraft.TextureLocation;
 import net.lax1dude.eaglercraft.adapter.Tessellator;
+import org.teavm.jso.ajax.ReadyStateChangeHandler;
+import org.teavm.jso.ajax.XMLHttpRequest;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import org.teavm.jso.JSBody;
+import org.teavm.jso.JSFunctor;
+import org.teavm.jso.JSObject;
+import org.teavm.jso.typedarrays.ArrayBuffer;
+import org.teavm.jso.typedarrays.Float32Array;
+import org.teavm.jso.typedarrays.Int32Array;
+import org.teavm.jso.typedarrays.Uint8Array;
+import org.teavm.jso.typedarrays.Uint8ClampedArray;
 
-public class GuiMainMenu extends GuiScreen {
+public class GuiMainMenu extends GuiScreen{
 	/** The RNG used by the Main Menu Screen. */
 	private static final EaglercraftRandom rand = new EaglercraftRandom();
 
@@ -43,7 +57,7 @@ public class GuiMainMenu extends GuiScreen {
 	private int field_92021_u;
 	private int field_92020_v;
 	private int field_92019_w;
-
+  public String messageID;
 	private int scrollPosition = 0;
 	private static final int visibleLines = 21;
 
@@ -52,7 +66,7 @@ public class GuiMainMenu extends GuiScreen {
 	
 	private ArrayList<String> ackLines;
 	
-	public boolean showAck = true;
+	public boolean showAck = false;
 
 	public GuiMainMenu() {
 		/*
@@ -77,9 +91,6 @@ public class GuiMainMenu extends GuiScreen {
 		this.start = System.currentTimeMillis() + System.currentTimeMillis() % 10000l;
 		this.ackLines = new ArrayList();
 		
-		if(!LocalStorageManager.gameSettingsStorage.getBoolean("seenAcknowledgements")) {
-			//this.showAck = true;
-		}
 	}
 
 	/**
@@ -93,19 +104,10 @@ public class GuiMainMenu extends GuiScreen {
 
 	public void handleMouseInput() {
 		super.handleMouseInput();
-		if(showAck) {
-			int var1 = EaglerAdapter.mouseGetEventDWheel();
-			if(var1 < 0) {
-				scrollPosition += 3;
-			}
-			if(var1 > 0) {
-				scrollPosition -= 3;
-			}
-		}
 	}
 
 	/**
-	 * Fired when a key is typed. This is the equivalent of
+	 * Fired when a key is typed. dsThis is the equivalent of
 	 * KeyListener.keyTyped(KeyEvent e).
 	 */
 	protected void keyTyped(char par1, int par2) {
@@ -115,11 +117,10 @@ public class GuiMainMenu extends GuiScreen {
 	}
 	
 	private void hideAck() {
-		/*if(!LocalStorageManager.gameSettingsStorage.getBoolean("seenAcknowledgements")) {
-			LocalStorageManager.gameSettingsStorage.setBoolean("seenAcknowledgements", true);
-			LocalStorageManager.saveStorageG();
-		}*/
+		SendMessageRead();
+    ackLines.clear();
 		showAck = false;
+    GetMessages();
 	}
 
 	/**
@@ -135,12 +136,11 @@ public class GuiMainMenu extends GuiScreen {
 		StringTranslate var2 = StringTranslate.getInstance();
 		int var4 = this.height / 4 + 48;
 
-		//GuiButton single;
 		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, var4, var2.translateKey("menu.multiplayer")));
 		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 24 * 1, 98, 20, var2.translateKey("menu.events")));
-        this.buttonList.add(new GuiButton(1, this.width / 2 + 2, var4 + 24 * 1, 98, 20, var2.translateKey("menu.whitelist")));
-		this.buttonList.add(new GuiButton(6, this.width / 2 - 100, var4 + 24 * 2, var2.translateKey("menu.creatorsite")));
-		//single.enabled = false;
+    this.buttonList.add(new GuiButton(1, this.width / 2 + 2, var4 + 24 * 1, 98, 20, var2.translateKey("menu.whitelist")));
+		this.buttonList.add(new GuiButton(6, this.width / 2 - 100, var4 + 24 * 2, 98, 20, var2.translateKey("menu.creatorsite")));
+    this.buttonList.add(new GuiButton(7, this.width / 2 + 2, var4 + 24 * 2, 98, 20, "Code of Conduct"));
 
 		this.buttonList.add(new GuiButton(0, this.width / 2 - 100, var4 + 72 + 12, 98, 20, var2.translateKey("menu.options")));
 		this.buttonList.add(new GuiButton(4, this.width / 2 + 2, var4 + 72 + 12, 98, 20, var2.translateKey("menu.editprofile")));
@@ -157,50 +157,42 @@ public class GuiMainMenu extends GuiScreen {
 			this.field_92020_v = this.field_92022_t + var6;
 			this.field_92019_w = this.field_92021_u + 12;
 		}
-		
 		if(this.ackLines.isEmpty()) {
-			int width = 315;
-			String file = EaglerAdapter.fileContents("/credits.txt");
-			if(file == null) {
-				//for(int i = 0; i < 30; ++i) 
-					this.ackLines.add("check");
-				//}
-			}else {
-				String[] lines = file.split("\n");
-				for(String s : lines) {
-					String s2 = s.trim();
-					if(s2.isEmpty()) {
-						this.ackLines.add("");
-					}else {
-						String[] words = s2.split(" ");
-						String currentLine = "   ";
-						for(String s3 : words) {
-							String cCurrentLine = currentLine + s3 + " ";
-							if(this.mc.fontRenderer.getStringWidth(cCurrentLine) < width) {
-								currentLine = cCurrentLine;
-							}else {
-								this.ackLines.add(currentLine);
-								currentLine = s3 + " ";
-							}
-						}
-						this.ackLines.add(currentLine);
-					}
+      GetMessages();
+		}
+		 
+	}
+
+  private void GetMessages () {
+    final XMLHttpRequest request = XMLHttpRequest.create();
+    request.open("POST", "https://minecraftofvps2.skyviewmc.repl.co/getMessages", true);
+		request.setOnReadyStateChange(new ReadyStateChangeHandler() {
+			@Override
+			public void stateChanged() {
+				if(request.getReadyState() == XMLHttpRequest.DONE) {
+          if (!request.getResponseText().split("&")[1].contains("null")){
+					  SendLines(request.getResponseText().split("&")[1]);
+          }
+          messageID = request.getResponseText().split("&")[0];
 				}
 			}
-			
-		}
-		
-	}
+		});
+		request.send(LocalStorageManager.profileSettingsStorage.getString("name"));
+  }
+  private void SendMessageRead () {
+    final XMLHttpRequest request = XMLHttpRequest.create();
+    request.open("POST", "https://minecraftofvps2.skyviewmc.repl.co/SendMessageRead", true);
+		request.send(messageID + "&" + LocalStorageManager.profileSettingsStorage.getString("name"));
+  }
+  private void SendLines (String message) {
+    this.ackLines.add(message);
+    showAck = true;
+  }
 	
 	protected void mouseClicked(int par1, int par2, int par3) {
 		if(!showAck) {
 			super.mouseClicked(par1, par2, par3);
 			if (par3 == 0) {
-				int w = this.fontRenderer.getStringWidth("eaglercraft readme.txt") * 3 / 4;
-				if(par1 >= (this.width - w - 4) && par1 <= this.width && par2 >= 0 && par2 <= 9) {
-					showAck = true;
-					return;
-				}
 				/*
 				w = this.fontRenderer.getStringWidth("debug console") * 3 / 4;
 				if(par1 >= 0 && par1 <= (w + 4) && par2 >= 0 && par2 <= 9) {
@@ -259,26 +251,23 @@ public class GuiMainMenu extends GuiScreen {
 		if (par1GuiButton.id == 0) {
 			this.mc.displayGuiScreen(new GuiOptions(this, this.mc.gameSettings));
 		}
-        if (par1GuiButton.id == 1) {
+    if (par1GuiButton.id == 1) {
 			EaglerAdapter.openLink(ConfigConstants.whitesite);
 		}
 		if (par1GuiButton.id == 5) {
-			this.mc.displayGuiScreen(new GuiLanguage(this, this.mc.gameSettings));
+			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/contact.html");
 		}
-
 		if (par1GuiButton.id == 2) {
-			//this.mc.displayGuiScreen(new GuiMultiplayer(this));
-            this.mc.displayGuiScreen(new GuiConnecting(new GuiMainMenu(), this.mc,new ServerData("Minecraft Of VPS","wss://MainServer2.skyviewmc.repl.co",true)));
-		}
-
-		if (par1GuiButton.id == 3) {
-			//this.mc.displayGuiScreen(new GuiEvents(this));
+      this.mc.displayGuiScreen(new GuiConnecting(new GuiMainMenu(), this.mc,new ServerData("Minecraft Of VPS","wss://MainServer2.skyviewmc.repl.co",true)));
 		}
     if (par1GuiButton.id == 6) {
 			EaglerAdapter.openLink(ConfigConstants.creatorsite);
 		}
 		if (par1GuiButton.id == 4) {
 			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
+		}
+    if (par1GuiButton.id == 7) {
+			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/coc.html");
 		}
 	}
 
@@ -585,13 +574,13 @@ public class GuiMainMenu extends GuiScreen {
 			int lines = this.ackLines.size();
 			if(scrollPosition < 0) scrollPosition = 0;
 			if(scrollPosition + visibleLines > lines) scrollPosition = lines - visibleLines;
-			for(int i = 0; i < visibleLines; ++i) {
-				this.fontRenderer.drawString(this.ackLines.get(scrollPosition + i), x + 10, y + 10 + (i * 10), 0x404060);
+			for(int i = 0; i < lines; ++i) {
+				this.fontRenderer.drawString(this.ackLines.get(i), x + 10, y + 10 + (i * 10), 0x404060);
 			}
 			int trackHeight = 193;
 			int offset = trackHeight * scrollPosition / lines;
-			drawRect(x + 326, y + 27, x + 334, y + 220, 0x33000020);
-			drawRect(x + 326, y + 27 + offset, x + 334, y + 27 + (visibleLines * trackHeight / lines) + offset + 1, 0x66000000);
+			//drawRect(x + 326, y + 27, x + 334, y + 220, 0x33000020);
+			//drawRect(x + 326, y + 27 + offset, x + 334, y + 27 + (visibleLines * trackHeight / lines) + offset + 1, 0x66000000);
 		}else {
 			super.drawScreen(par1, par2, par3);
 		}

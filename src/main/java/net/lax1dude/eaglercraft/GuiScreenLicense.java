@@ -19,8 +19,13 @@ public class GuiScreenLicense extends GuiScreen {
 		if(beginOffset < 5) {
 			beginOffset = 5;
 		}
-		this.buttonList.add(new GuiButton(1, this.width / 2 - 120, beginOffset + 180, 115, 20, new String(License.line61)));
-		this.buttonList.add(acceptButton = new GuiButton(2, this.width / 2 + 5, beginOffset + 180, 115, 20, new String(License.line60)));
+		//this.buttonList.add(new GuiButton(1, this.width / 2 - 120, beginOffset + 180, 115, 20, new String(License.line61)));
+		this.buttonList.add(acceptButton = new GuiButton(2, this.width / 2 - 50, beginOffset + 180, 115, 20, new String(License.line60)));
+    int var4 = this.height / 4 + 48;
+    this.buttonList.add(new GuiButton(3, this.width / 2 - 100, var4 + 8 * 1, 98, 20, "History"));
+    this.buttonList.add(new GuiButton(4, this.width / 2 + 2, var4 + 8 * 1, 98, 20, "Credits"));
+    this.buttonList.add(new GuiButton(5, this.width / 2 - 100, var4 + 30 * 1, 98, 20, "Code of Conduct"));
+    this.buttonList.add(new GuiButton(6, this.width / 2 + 2, var4 + 30 * 1, 98, 20, "License"));
 		acceptButton.enabled = false;
 	}
 	
@@ -31,6 +36,14 @@ public class GuiScreenLicense extends GuiScreen {
 			mc.displayGuiScreen(continueScreen);
 		}else if(par1GuiButton.id == 1) {
 			mc.displayGuiScreen(new GuiScreenLicenseDeclined());
+		}else if(par1GuiButton.id == 6) {
+			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/license.html");
+		}else if(par1GuiButton.id == 4) {
+			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/credits.html");
+		}else if(par1GuiButton.id == 5) {
+			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/coc.html");
+		}else if(par1GuiButton.id == 3) {
+			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/history.html");
 		}
 	}
 	
@@ -46,21 +59,15 @@ public class GuiScreenLicense extends GuiScreen {
 		drawCenteredString(fontRenderer, new String(License.line00), width * 3 / 8, beginOffset * 3 / 4, 0xDDDD55);
 		EaglerAdapter.glPopMatrix();
 		
-		drawCenteredString(fontRenderer, new String(License.line10), width / 2, beginOffset + 22, 0xFF7777);
-		drawCenteredString(fontRenderer, new String(License.line11), width / 2, beginOffset + 33, 0xFF7777);
-		drawCenteredString(fontRenderer, new String(License.line12), width / 2, beginOffset + 44, 0xFF7777);
-
-		drawCenteredString(fontRenderer, new String(License.line20), width / 2, beginOffset + 62, 0x448844);
-		drawCenteredString(fontRenderer, new String(License.line21), width / 2, beginOffset + 71, 0x448844);
-
+		drawCenteredString(fontRenderer, "Please read the following documents", width / 2, beginOffset + 22, 0xFF7777);
+		drawCenteredString(fontRenderer, "They are good to keep in mind and contains MOV rules.", width / 2, beginOffset + 33, 0xFF7777);
+		drawCenteredString(fontRenderer, "Along with credits and our long history.", width / 2, beginOffset + 44, 0xFF7777);
+    
 		EaglerAdapter.glPushMatrix();
 		EaglerAdapter.glScalef(0.75f, 0.75f, 0.75f);
-		drawCenteredString(fontRenderer, new String(License.line30), width * 4 / 6, (beginOffset + 89) * 4 / 3, 0x666666);
-		drawCenteredString(fontRenderer, new String(License.line31), width * 4 / 6, (beginOffset + 97) * 4 / 3, 0x666666);
-		drawCenteredString(fontRenderer, new String(License.line32), width * 4 / 6, (beginOffset + 105) * 4 / 3, 0x999999);
 		EaglerAdapter.glPopMatrix();
 		
-		drawCenteredString(fontRenderer, new String(License.line40), width / 2, beginOffset + 120, 0xFF7777);
+		//drawCenteredString(fontRenderer, new String(License.line40), width / 2, beginOffset + 120, 0xFF7777);
 		
 		boolean mouseOverCheck = width / 2 - 100 < mx && width / 2 - 83 > mx && beginOffset + 142 < my && beginOffset + 159 > my;
 		
@@ -87,7 +94,7 @@ public class GuiScreenLicense extends GuiScreen {
 		
 		EaglerAdapter.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
 		
-		drawString(fontRenderer, new String(License.line50), width / 2 - 75, beginOffset + 147, 0xEEEEEE);
+		drawString(fontRenderer, "I have the the documents and I'm not lying.", width / 2 - 75, beginOffset + 147, 0xEEEEEE);
 	}
 	
 	protected void mouseClicked(int par1, int par2, int par3) {
