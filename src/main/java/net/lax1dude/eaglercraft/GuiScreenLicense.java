@@ -37,13 +37,13 @@ public class GuiScreenLicense extends GuiScreen {
 		}else if(par1GuiButton.id == 1) {
 			mc.displayGuiScreen(new GuiScreenLicenseDeclined());
 		}else if(par1GuiButton.id == 6) {
-			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/license.html");
+			EaglerAdapter.openLink("https://minecraftofvps2--skyviewmc.repl.co/license.html");
 		}else if(par1GuiButton.id == 4) {
-			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/credits.html");
+			EaglerAdapter.openLink("https://minecraftofvps2--skyviewmc.repl.co/credits.html");
 		}else if(par1GuiButton.id == 5) {
-			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/coc.html");
+			EaglerAdapter.openLink("https://minecraftofvps2--skyviewmc.repl.co/coc.html");
 		}else if(par1GuiButton.id == 3) {
-			EaglerAdapter.openLink("https://minecraftofvps2.skyviewmc.repl.co/history.html");
+			EaglerAdapter.openLink("https://minecraftofvps2--skyviewmc.repl.co/history.html");
 		}
 	}
 	
