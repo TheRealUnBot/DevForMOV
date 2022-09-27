@@ -165,7 +165,7 @@ public class GuiMainMenu extends GuiScreen{
 
   private void GetMessages () {
     final XMLHttpRequest request = XMLHttpRequest.create();
-    request.open("POST", "https://minecraftofvps2--skyviewmc.repl.co/getMessages", true);
+    request.open("POST", "https://minecraftofvps--skyviewmc.repl.co/getMessages", true);
 		request.setOnReadyStateChange(new ReadyStateChangeHandler() {
 			@Override
 			public void stateChanged() {
@@ -181,7 +181,7 @@ public class GuiMainMenu extends GuiScreen{
   }
   private void SendMessageRead () {
     final XMLHttpRequest request = XMLHttpRequest.create();
-    request.open("POST", "https://minecraftofvps2--skyviewmc.repl.co/SendMessageRead", true);
+    request.open("POST", "https://minecraftofvps--skyviewmc.repl.co/SendMessageRead", true);
 		request.send(messageID + "&" + LocalStorageManager.profileSettingsStorage.getString("name"));
   }
   private void SendLines (String message) {
@@ -255,7 +255,7 @@ public class GuiMainMenu extends GuiScreen{
 			EaglerAdapter.openLink(ConfigConstants.whitesite);
 		}
 		if (par1GuiButton.id == 5) {
-			EaglerAdapter.openLink("https://minecraftofvps2--skyviewmc.repl.co/contact.html");
+			EaglerAdapter.openLink("https://minecraftofvps--skyviewmc.repl.co/contact.html");
 		}
 		if (par1GuiButton.id == 2) {
       this.mc.displayGuiScreen(new GuiConnecting(new GuiMainMenu(), this.mc,new ServerData("Minecraft Of VPS","wss://MainServer2--skyviewmc.repl.co",true)));
@@ -264,7 +264,7 @@ public class GuiMainMenu extends GuiScreen{
 			EaglerAdapter.openLink(ConfigConstants.creatorsite);
 		}
     if (par1GuiButton.id == 3) {
-			EaglerAdapter.openLink("https://minecraftofvps2--skyviewmc.repl.co/coc.html");
+			EaglerAdapter.openLink("https://minecraftofvps--skyviewmc.repl.co/coc.html");
 		}
 		if (par1GuiButton.id == 4) {
 			this.mc.displayGuiScreen(new GuiScreenEditProfile(this));
