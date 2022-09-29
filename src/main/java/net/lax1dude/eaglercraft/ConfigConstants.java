@@ -4,7 +4,7 @@ public class ConfigConstants {
 	
 	public static boolean profanity = false;
 
-	public static final String version = "22w38a";
+	public static final String version = "22w39a";
 	public static final String mainMenuString = "MinecraftOFVPS " + version;
 	
 	public static final String creatorsite = "https://main.realunbot.repl.co/";

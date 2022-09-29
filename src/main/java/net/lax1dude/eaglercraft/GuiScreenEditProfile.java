@@ -187,7 +187,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 			drawRect(skinX, skinY + skinHeight - 1, skinX + skinWidth, skinY + skinHeight, cc);
 			
 			if(mouseOver) {
-				drawCenteredString(fontRenderer, "Steve", skinX + skinWidth / 2, skinY + skinHeight + 6, cc);
+				drawCenteredString(fontRenderer, "Bob", skinX + skinWidth / 2, skinY + skinHeight + 6, cc);
 			}
 			
 			this.mc.renderEngine.bindTexture(eee.glTex);
@@ -211,7 +211,7 @@ public class GuiScreenEditProfile extends GuiScreen {
 			drawRect(skinX, skinY + skinHeight - 1, skinX + skinWidth, skinY + skinHeight, cc);
 				
 			if(mouseOver) {
-				drawCenteredString(fontRenderer, "Alex", skinX + skinWidth / 2, skinY + skinHeight + 8, cc);
+				drawCenteredString(fontRenderer, "Greta", skinX + skinWidth / 2, skinY + skinHeight + 8, cc);
 			}
 
 			this.mc.renderEngine.bindTexture(eee.glTex);
@@ -222,10 +222,10 @@ public class GuiScreenEditProfile extends GuiScreen {
 			skinWidth = 80;
 			skinHeight = 130;
 			if(DefaultSkinRenderer.isPlayerPreviewNew(selectedSlot)) {
-				int w = fontRenderer.getStringWidth("1.8") + 4;
+				int w = fontRenderer.getStringWidth("1.5") + 4;
 				EaglerAdapter.glPushMatrix();
 				EaglerAdapter.glScalef(0.75f, 0.75f, 0.75f);
-				drawString(fontRenderer, "1.8", (int)((skinX + skinWidth) / 0.75f) - w, (int)((skinY + skinHeight) / 0.75f) - 12, 0xFFBBBB66);
+				drawString(fontRenderer, "1.5", (int)((skinX + skinWidth) / 0.75f) - w, (int)((skinY + skinHeight) / 0.75f) - 12, 0xFFBBBB66);
 				EaglerAdapter.glPopMatrix();
 			}
 			DefaultSkinRenderer.renderPlayerPreview(xx, yy, newSkinWaitSteveOrAlex ? width / 2 : mx, newSkinWaitSteveOrAlex ? height / 2 : my, selectedSlot);

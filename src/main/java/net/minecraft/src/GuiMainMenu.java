@@ -158,7 +158,7 @@ public class GuiMainMenu extends GuiScreen{
 			this.field_92019_w = this.field_92021_u + 12;
 		}
 		if(this.ackLines.isEmpty()) {
-      GetMessages();
+      //GetMessages();
 		}
 		 
 	}

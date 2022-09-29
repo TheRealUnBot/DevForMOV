@@ -11,6 +11,7 @@ import net.lax1dude.eaglercraft.EaglerProfile;
 
 import net.lax1dude.eaglercraft.GuiScreenEditProfile;
 import net.lax1dude.eaglercraft.GuiScreenLicense;
+import net.lax1dude.eaglercraft.GuiScreenGoogle;
 import net.lax1dude.eaglercraft.GuiScreenVoiceChannel;
 import net.lax1dude.eaglercraft.LocalStorageManager;
 import net.lax1dude.eaglercraft.adapter.Tessellator;
@@ -252,9 +253,11 @@ public class Minecraft implements Runnable {
 		GuiScreen scr;
 		
 		if(s != null) {
-			scr = new GuiScreenEditProfile(new GuiConnecting(new GuiMainMenu(), this, new ServerData("Eaglercraft Server", s, false)));
+			//scr = new GuiScreenGoogle(new GuiScreenEditProfile(new GuiConnecting(new GuiMainMenu(), this, new ServerData("Minecraft Server", s, false))));
+      scr = new GuiScreenEditProfile(new GuiConnecting(new GuiMainMenu(), this, new ServerData("Minecraft Server", s, false)));
 		}else {
-			scr = new GuiScreenEditProfile(new GuiMainMenu());
+			//scr = new GuiScreenGoogle(new GuiScreenEditProfile(new GuiMainMenu()));
+      scr = new GuiScreenEditProfile(new GuiMainMenu());
 		}
 		
 		if(!LocalStorageManager.profileSettingsStorage.getBoolean("acceptLicense")) {
@@ -272,7 +275,7 @@ public class Minecraft implements Runnable {
 	
 	public void showWarningText() {
 		ScaledResolution var1 = new ScaledResolution(this.gameSettings, this.displayWidth, this.displayHeight);
-		String s = "Warning: Recompiled Minecraft!";
+		String s = "Warning: Loading Chicken Virus!!";
 		this.fontRenderer.drawString(s, (var1.getScaledWidth() - this.fontRenderer.getStringWidth(s)) / 2, var1.getScaledHeight() - 50, 0xffcccccc);
 	}
 	
